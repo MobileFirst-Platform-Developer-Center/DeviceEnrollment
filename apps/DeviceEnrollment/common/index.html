@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<!--
+    COPYRIGHT LICENSE: This information contains sample code provided in source code form. You may copy, modify, and distribute
+    these sample programs in any form without payment to IBM® for the purposes of developing, using, marketing or distributing
+    application programs conforming to the application programming interface for the operating platform for which the sample code is written.
+    Notwithstanding anything to the contrary, IBM PROVIDES THE SAMPLE SOURCE CODE ON AN "AS IS" BASIS AND IBM DISCLAIMS ALL WARRANTIES,
+    EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, ANY IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, SATISFACTORY QUALITY,
+    FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND ANY WARRANTY OR CONDITION OF NON-INFRINGEMENT. IBM SHALL NOT BE LIABLE FOR ANY DIRECT,
+    INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR OPERATION OF THE SAMPLE SOURCE CODE.
+    IBM HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS OR MODIFICATIONS TO THE SAMPLE SOURCE CODE.
+ -->
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>DeviceEnrollment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+  <!--
+    			<link rel="shortcut icon" href="images/favicon.png">
+    			<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    		-->
+  <link rel="stylesheet" href="css/main.css">
+  <script>
+    window.$ = window.jQuery = WLJQ;
+  </script>
+</head>
+
+<body style="display: none;">
+  <header id="header">
+    <h1>Device Enrollment Project <input type="button" value="logout" onclick="logout()" id="logoutButton" /></h1>
+
+  </header>
+  <div id="wrapper">
+
+    <div id="balanceBody" class="section">
+      <h2>Hello <span id="displayName"></span>!</h2>
+      <br/>This device is enrolled.
+      <br/><strong>Current Balance:</strong>  <span id="balance"></span>
+      <br/><strong>Device ID:</strong>  <span id="deviceId"></span>
+      <br/>
+      <br/>
+      <input type="button" value="Show Transactions" onclick="getTransactions();" id="showTransactionsButton" />
+      <table id="transactions" style="display:none;">
+        <thead>
+          <th>id</th>
+          <th>amount</th>
+          <th>date</th>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="loginBody" class="section">
+      <h2>Please Login</h2>
+      <p>This device is not recognized. Please login to enroll the device.</p>
+      <input type="text" id="username" placeholder="Username"/>
+      <br/>
+      <input type="password" id="password" placeholder="Password"/>
+      <br/>
+      <input type="button" onclick="login()" value="Login" />
+    </div>
+
+    <div id="enrollBody" class="section">
+      <h2>Please define a PIN code to enroll this device.</h2>
+      <input type="text" id="newPin" placeholder="Choose a 4-digit PIN code" maxlength="4" />
+      <br/>
+      <input type="text" id="repeatPin" placeholder="Repeat PIN code" maxlength="4" />
+      <br/>
+      <input type="button" value="ENROLL DEVICE" onclick="setPinCode()" />
+    </div>
+
+    <div id="checkPinCode" class="section">
+      <h2>Please enter your PIN code to continue</h2>
+      <input type="text" id="pin" placeholder="Enter your 4-digit PIN"/>
+      <br/>
+      <input type="button" value="CONTINUE" onclick="verifyPinCode()" />
+    </div>
+
+  </div>
+  <script src="js/initOptions.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/messages.js"></script>
+</body>
+
+</html>
