@@ -57,3 +57,5 @@ derby.log
 #
 apps/DeviceEnrollment/iphone/native
 apps/DeviceEnrollment/android/native
+.jazzignore
+/pom.xml
